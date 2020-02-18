@@ -24,4 +24,4 @@ Nina's API is heavily inspired by AMD's: modules are declared through the use of
 
 ## Usage
 
-TODO
+Here's [the documentation](../blob/master/documentation.md). ;)
