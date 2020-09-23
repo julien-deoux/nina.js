@@ -4,7 +4,7 @@ _Nina Is Not AMD._
 
 Nina is a lightweight in-browser asynchronous module management library. **It is not an implementation of AMD.** To read more about differences with AMD, check out the end of this file.
 
-It is being developed more as an experiment than something aimed for production, though you might find some use for it in small projects which don't rely on a Node-based transpilation pipeline.
+It is being developed as an experiment rather than something aimed at production, though you might find some use for it in small projects which don't rely on a Node-based transpilation pipeline.
 
 Also, nina.js is an anagram of ninjas, which makes it automatically cool.
 
@@ -12,7 +12,7 @@ Also, nina.js is an anagram of ninjas, which makes it automatically cool.
 
 ### Setting up Nina in your project
 
-Nina is specifically meant to be used directly in the browser. No NPM instructions, just add this to your HTML file:
+Nina is explicitely meant to be used directly in the browser. No NPM instructions; just add this to your HTML file:
 
 ```html
 <script src="path/to/nina.js"></script>
@@ -38,7 +38,7 @@ Because of the way Nina resolves URLs (or _doesn't_, technically), those URLs ha
 Some quick notes:
 * The first argument is **always** an array of strings. If your module doesn't have dependencies, pass an empty array. If it only has one dependency, pass an array with one element.
 * The second argument is **always** a function that takes your dependencies as arguments and returns your module. If your module is a plain object, pass a function which just returns that object.
-* The code in the entire file is executed inside a closure by Nina, so you can technically write stuff outside of the call to `define`. This gives you a lot of flexibility (weird use cases like a dynamic dependency list come to mind) but I would suggest you keep your code inside the second argument as much as possible since not doing so isn't supported and could break on future commits.
+* The code in the entire file is executed inside a closure by Nina, so you can technically write stuff outside of the call to `define`. This can give you some flexibility (weird use cases like a dynamic dependency list come to mind) but I would suggest you keep your code inside the second argument as much as possible since not doing so isn't supported and could break on future commits.
 
 ### Using modules in your project
 
@@ -57,7 +57,7 @@ Nina.require(
 
 When you call the `require` function, Nina checks its cache for already loaded modules and their dependencies and fetches those that haven't been loaded yet.
 
-Just like the `define` function described above, the `require` function exactly takes an array of string and a function as arguments and only that.
+Just like the `define` function described above, the `require` function takes an array of string and a function as arguments and only that.
 
 ## About module URLs
 
